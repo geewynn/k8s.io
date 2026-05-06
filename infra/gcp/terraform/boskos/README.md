@@ -8,10 +8,7 @@ This directory creates and manages 160+ GCP projects used by Boskos for ephemera
 ## What This Manages
 
 - `Boskos` **GCP folder** : This is under the `kubernetes.io` organization.
-- **160 standard E2E projects**: `k8s-infra-e2e-boskos-001` through `k8s-infra-e2e-boskos-160`.
-- **30 scale E2E projects**: `k8s-infra-e2e-boskos-scale-01` through `k8s-infra-e2e-boskos-scale-30`.
-- **10 GPU E2E projects**: `k8s-infra-e2e-boskos-gpu-01` through `k8s-infra-e2e-boskos-gpu-10`.
-- **6 special boskos projects**: This is used for debugging, ingress, node-e2e, scale-5k testing.
+- **E2E projects**: Manages GCP projects used for several E2E tests.
 - **Artifact Registry**: Used in each project (Docker format, 7-day cleanup, public read)
 - **SSH keys**: Used for accessing Prow on each project's compute metadata.
 

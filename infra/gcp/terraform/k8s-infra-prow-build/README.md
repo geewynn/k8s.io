@@ -6,10 +6,7 @@ This directory creates the GCP project and GKE cluster where Prow dispatches the
 
 - **GCP Project** (`k8s-infra-prow-build`): via the `gke-project` module.
 - **GKE cluster** (`prow-build`): via the `gke-cluster` module, production cluster on the REGULAR release channel.
-- **Three node pools** via the `gke-nodepool` module:
-  - `pool7`: c4d-highmem-8-lssd (10–250 nodes, preferred pool).
-  - `pool6`: c4-highmem-8-lssd (1–250 nodes, overflow/nested-virt, tainted `spare=true:PreferNoSchedule`).
-  - `pool7-arm64`: c4a-highmem-8-lssd (3–100 nodes, ARM64 workloads).
+- **Node pools**: Setup via the `gke-nodepool` module.
 - **Workload Identity Federation pools**: Cross-cloud authentication for EKS, Kops, and AKS build clusters.
 - **VPC peering**: With GCVE (`broadcom-451918`) for vSphere testing.
 - **Service accounts**: Workload Identity-bound SAs for `prow-build`, `boskos-janitor`, and `kubernetes-external-secrets`.
