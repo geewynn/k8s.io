@@ -1,1 +1,7 @@
-# No images yet
+- name: dra-driver-google-tpu
+  dmap:
+    "sha256:be92f60075ac5e1672d5af9ecf1a9e8e5de1090e4fd6a79289049fac17b7d026": ["v0.1.0"]
+
+- name: charts/dra-driver-google-tpu
+  dmap:
+    "sha256:44bb24443902ee0dba3585b1e058ee19d0d1593d0f94981160f71413d22611c9": ["0.1.0"]
