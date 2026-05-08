@@ -425,9 +425,7 @@ groups:
     settings:
       ReconcileMembers: "true"
     members:
-      - daniel@weave.works
       - justinsb@google.com
-      - leigh@weave.works
       - luoh@vmware.com
       - timothysc@gmail.com
 
