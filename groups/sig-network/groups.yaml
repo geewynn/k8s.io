@@ -263,7 +263,6 @@ groups:
     members:
       - k8s-infra-release-editors@kubernetes.io
       - brucema19901024@gmail.com
-      - bryan@weave.works
       - cdc@redhat.com
       - dcbw@redhat.com
       - grosenhouse@pivotal.io
