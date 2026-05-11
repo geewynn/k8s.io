@@ -17,7 +17,7 @@ limitations under the License.
 module "eks" {
   providers = { aws = aws.kops-infra-ci }
   source    = "terraform-aws-modules/eks/aws"
-  version   = "21.3.2"
+  version   = "~> 21.20"
 
   name                   = local.cluster_name
   kubernetes_version     = var.eks_version
@@ -179,7 +179,7 @@ resource "aws_eks_pod_identity_association" "kops_prow_build" {
 module "vpc_cni_irsa" {
   providers = { aws = aws.kops-infra-ci }
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts"
-  version   = "~> 6.2.1"
+  version   = "~> 6.6"
 
   name                  = "vpc-cni-ipv4"
   attach_vpc_cni_policy = true
@@ -202,7 +202,7 @@ module "vpc_cni_irsa" {
 module "ebs_csi_irsa" {
   providers = { aws = aws.kops-infra-ci }
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts"
-  version   = "~> 6.2.1"
+  version   = "~> 6.6"
 
   name                  = "ebs-csi"
   attach_ebs_csi_policy = true
@@ -222,7 +222,7 @@ module "ebs_csi_irsa" {
 module "cluster_autoscaler_irsa_role" {
   providers = { aws = aws.kops-infra-ci }
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts"
-  version   = "~> 6.2.1"
+  version   = "~> 6.6"
 
   name                             = "cluster-autoscaler"
   attach_cluster_autoscaler_policy = true
