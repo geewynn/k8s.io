@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: monitoring
+  name: monitoring-utility
   annotations:
     argocd.argoproj.io/sync-wave: "-3"
 spec:
@@ -9,12 +9,8 @@ spec:
   generators:
     - clusters:
         selector:
-          matchExpressions:
-            - key: name
-              operator: In
-              values:
-                - gke-prow-build
-                # - gke-utility
+          matchLabels:
+            clusterType: 'utility'
   template:
     metadata:
       name: 'monitoring-{{ .name }}'
@@ -28,7 +24,7 @@ spec:
       sources:
         - chart: kube-prometheus-stack
           repoURL: https://prometheus-community.github.io/helm-charts
-          targetRevision: 80.10.0
+          targetRevision:  85.1.3
           helm:
             releaseName: monitoring
             valueFiles:
@@ -40,9 +36,9 @@ spec:
           repoURL: https://github.com/kubernetes/k8s.io
           targetRevision: main
       syncPolicy:
-        # automated:
-        #   prune: true
-        #   selfHeal: true
+        automated:
+          prune: true
+          selfHeal: true
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
