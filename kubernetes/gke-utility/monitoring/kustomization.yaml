@@ -5,6 +5,7 @@ resources:
   - secrets.yaml
   - httproute.yaml
   - dashboards.yaml
+  - hyperdisk-sc.yaml
 
 configMapGenerator:
   - name: prow-dashboards
