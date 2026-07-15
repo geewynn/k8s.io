@@ -59,6 +59,7 @@ metaMonitoring:
 alertmanager:
   persistentVolume:
     enabled: true
+    storageClass: hyperdisk-balanced
   replicas: 2
   resources:
     limits:
@@ -73,6 +74,7 @@ alertmanager:
 compactor:
   persistentVolume:
     size: 20Gi
+    storageClass: hyperdisk-balanced
   resources:
     limits:
       cpu: 4
@@ -94,6 +96,7 @@ distributor:
 ingester:
   persistentVolume:
     size: 50Gi
+    storageClass: hyperdisk-balanced
   replicas: 3
   resources:
     limits:
@@ -158,6 +161,7 @@ ruler:
 store_gateway:
   persistentVolume:
     size: 10Gi
+    storageClass: hyperdisk-balanced
   replicas: 3
   resources:
     limits:
